@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #00ADB5, #222831);
+}
+.container{
+    width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+.container header{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border: solid 1px #ccc;
+    border-radius: 30px;
+    position: relative;
+}
+header label{
+    height: 100%;
+    width: 30%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+#tab-A:checked ~ header .tab-A,
+#tab-B:checked ~ header .tab-B,
+#tab-C:checked ~ header .tab-C{
+  color: #EEEEEE;
+}
+header label:nth-child(2){
+    width: 40%;
+}
+header .slider{
+    position: absolute;
+    left: 50%;
+    height: 85%;
+    width: 120px;
+    border-radius: inherit;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #00ADB5, #222831);
+    transition: all 0.3s ease;
+}
+#tab-A:checked ~ header .slider{
+    left: 0%;
+    width: 90px;
+    transform: translateX(5%);
+}
+#tab-B:checked ~ header .slider{
+    left: 50%;
+    width: 120px;
+    transform: translateX(-50%);
+}
+#tab-C:checked ~ header .slider{
+    left: 100%;
+    width: 95px;
+    transform: translateX(-105%);
+}
+.cards .row-A{
+    transition: all 0.3s ease;
+}
+#tab-A:checked ~ .cards-container .cards .row-A{
+    margin-left: 0%;
+}
+#tab-B:checked ~ .cards-container .cards .row-A{
+    margin-left: -33.4%;
+}
+#tab-C:checked ~ .cards-container .cards .row-A{
+    margin-left: -66.8%;
+}
+.container input[type="radio"]{
+    display: none;
+}
+.cards-container{
+    overflow: hidden;
+}
+.cards-container .cards{
+    width: 300%;
+    display: flex;
+}
+.cards .rows{
+    width: 33.4%;
+}
+.tick{
+    width: 20px;
+}
+.rows .pricing{
+    margin: 20px 0;
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: solid 1px #252525;
+}
+.pricing span{
+    font-size: 48px;
+    font-weight: 600;
+    position: relative;
+}
+.pricing span::before,
+.pricing span::after{
+    position: absolute;
+    font-weight: 300;
+}
+.pricing span::before{
+    content: '$';
+    font-size: 18px;
+    position: absolute;
+    left: -18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+.pricing span::after{
+    content: '/month';
+    font-size: 18px;
+    bottom: 5px;
+}
+.pricing p{
+    font-size: 18px;
+    margin-top: 15px;
+}
+.rows .features li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+.tick{
+    margin-right: 10px;
+}
+.container button{
+    height: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: 30px;
+    color: #EEEEEE;
+    background: linear-gradient(#00ADB5, #222831);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+.container button:hover{
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
